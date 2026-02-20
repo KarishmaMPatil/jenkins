@@ -1,15 +1,14 @@
 pipeline {
     agent any 
     stages {
-        stage("pull") {
+        stage('pull') {
             steps {
-                git 'https://github.com/KarishmaMPatil/Terraform.git'
+                git branch: 'main', url: 'https://github.com/KarishmaMPatil/Terraform.git'
             }
         }
-
         stage('Build') { 
             steps {
-                sh 'echo "this is build stage"'
+               sh 'echo "this is build stage"'
             }
         }
         stage('Test') { 
@@ -23,4 +22,4 @@ pipeline {
             }
         }
     }
-}
+    }
